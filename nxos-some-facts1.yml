@@ -1,0 +1,19 @@
+---
+- name: gather facts and display them
+  hosts: nxos
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: invoke nxos facts
+    cisco.nxos.nxos_facts:
+      gather_subset: default
+
+  - name: show details
+    debug:
+      msg:
+        - "Host name: {{ ansible_net_hostname }}"
+        - "    Model: {{ ansible_net_model }}"
+        - "  Version: {{ ansible_net_version }}"
+        - "SerialNum: {{ ansible_net_serialnum }}"
+
