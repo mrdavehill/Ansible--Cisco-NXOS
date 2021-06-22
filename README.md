@@ -24,7 +24,7 @@ Create and provision a 'Bow-Tie' network using Vagrant, Ansible and Cisco NXOSv 
 
 git clone https://github.com/mrdavehill/Ansible--Cisco-NXOS.git
 
-Download images from Cisco.com
+Download nxosv.9.2.3 image from Cisco.com
 
 Install Virtualbox
 
