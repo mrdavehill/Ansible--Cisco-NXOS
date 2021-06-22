@@ -2,19 +2,19 @@
 
 On this page:
 
-/group_vars       NXOS Ansible variable
+/group_vars   -    NXOS Ansible variable
 
-/host_vars        Host specific variables (ip addresses etc)
+/host_vars    -    Host specific variables (ip addresses etc)
 
-Vagrantfile       Instructions for Virtualbox to set up 4 NXOSv VMs
+Vagrantfile   -    Instructions for Virtualbox to set up 4 NXOSv VMs
 
-ansible.cfg       Ansible settings
+ansible.cfg   -    Ansible settings
 
-inventory.yaml    List of all four VMs with some host specific variables
+inventory.yaml -   List of all four VMs with some host specific variables
 
-main.yaml         For future use (advanced config using roles)
+main.yaml     -    For future use (advanced config using roles)
 
-provisioner.yaml  Ansible playbook adding basic configuration to the VMs (ip addresses, hostnames, lldp and macs)
+provisioner.yaml - Ansible playbook adding basic configuration to the VMs (ip addresses, hostnames, lldp and macs)
  
 ### Use Case Description
 
