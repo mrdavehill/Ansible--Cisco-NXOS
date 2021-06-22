@@ -6,6 +6,8 @@ group_vars/   -    NXOS Ansible variable
 
 host_vars/    -    Host specific variables (ip addresses etc)
 
+j2/           -    Jinja2 template for configurung switchports
+
 Vagrantfile   -    Instructions for Virtualbox to set up four NXOSv VMs
 
 ansible.cfg   -    Ansible settings
