@@ -1,11 +1,6 @@
 ---
-- name: base configuration
+- name: advanced configuration
   hosts: all
-  connection: local
   gather_facts: no
   
   tasks:
-
-  - name: set hostnames
-    nxos_system:
-      hostname: "{{ inventory_hostname }}"
