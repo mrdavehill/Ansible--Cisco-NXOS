@@ -33,6 +33,7 @@ Install Ansible (min 2.9)
 From the command line type:
 
 $ vagrant up; vagrant up; vagrant up; vagrant up
+
 $ vagrant provision
 
 ### Getting help
