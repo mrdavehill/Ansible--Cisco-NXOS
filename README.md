@@ -22,7 +22,7 @@ Create and provision a 'Bow-Tie' network using Vagrant, Ansible and Cisco NXOSv 
 
 ### How to test the software
 
-git clone https://github.com/mrdavehill/Python--Cisco-ACI.git
+git clone https://github.com/mrdavehill/Ansible--Cisco-NXOS.git
 
 Download images from Cisco.com
 
