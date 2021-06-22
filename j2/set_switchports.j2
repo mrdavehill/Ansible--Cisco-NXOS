@@ -1,0 +1,7 @@
+{% for obj in ethernet_interfaces %}
+interface {{ obj.interface }}
+    no switchport
+    ip address {{ obj.addr }}
+    mac-address {{ obj.mac }}
+    no shutdown
+{% endfor %}

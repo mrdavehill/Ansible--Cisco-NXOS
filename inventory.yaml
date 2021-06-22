@@ -1,0 +1,18 @@
+all:
+  children:  
+    spines:
+      hosts:
+        spine01:
+          ansible_host: 127.0.0.1
+          ansible_port: 3122
+        spine02:
+          ansible_host: 127.0.0.1
+          ansible_port: 3222
+    leafs:
+      hosts:
+        leaf03:
+          ansible_host: 127.0.0.1
+          ansible_port: 3322
+        leaf04:
+          ansible_host: 127.0.0.1
+          ansible_port: 3422

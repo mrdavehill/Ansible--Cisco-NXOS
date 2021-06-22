@@ -1,0 +1,8 @@
+loopback_interfaces:
+  - { interface: loopback0, addr: 10.255.255.4/32 }
+
+ethernet_interfaces:
+  - { interface: Ethernet1/1, addr: 10.255.14.4/24, mac: eeee.eeee.1404 }
+  - { interface: Ethernet1/2, addr: 10.255.24.4/24, mac: eeee.eeee.2404 }
+  - { interface: Ethernet1/3, addr: 10.255.34.4/24, mac: eeee.eeee.3404 }
+

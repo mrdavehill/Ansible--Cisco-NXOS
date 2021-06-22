@@ -1,0 +1,30 @@
+---
+- name: base configuration
+  hosts: all
+  connection: local
+  gather_facts: no
+  
+  tasks:
+  - name: set hostnames
+    nxos_system:
+      hostname: "{{ inventory_hostname }}"
+
+  - name: enable lldp
+    nxos_config:
+      lines:
+        - config t
+        - feature lldp
+
+  - name: configure loopbacks
+    nxos_l3_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          ipv4:
+          - address: "{{ item.addr }}"
+      state: merged
+    with_items: "{{ loopback_interfaces }}"
+
+  - name: configure switchports
+    nxos_config:
+      src: j2/set_switchports.j2
+
