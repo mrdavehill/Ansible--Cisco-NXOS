@@ -3,6 +3,7 @@
 On this page:
 
 group_vars       NXOS Ansible variable
+
 host_vars        Host specific variables (ip addresses etc)
 Vagrantfile       Instructions for Virtualbox to set up 4 NXOSv VMs
 ansible.cfg       Ansible settings
