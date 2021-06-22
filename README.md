@@ -26,6 +26,8 @@ git clone https://github.com/mrdavehill/Ansible--Cisco-NXOS.git
 
 Download images from Cisco.com
 
+Install Virtualbox
+
 Install and configure Vagrant
 
 Install Ansible (min 2.9)
