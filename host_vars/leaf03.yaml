@@ -1,8 +1,8 @@
 loopback_interfaces:
-  - { interface: loopback0, addr: 10.255.255.3/32 }
+  - { interface: loopback0, ipv4addr: 10.255.255.3/32, ipv6addr: "fd00:ffff::3/128" }
 
 ethernet_interfaces:
-  - { interface: Ethernet1/1, addr: 10.255.13.3/24, mac: eeee.eeee.1303 }
-  - { interface: Ethernet1/2, addr: 10.255.23.3/24, mac: eeee.eeee.2303 }
-  - { interface: Ethernet1/3, addr: 10.255.34.3/24, mac: eeee.eeee.3403 }
+  - { interface: Ethernet1/1, ipv4addr: 10.255.13.3/24, ipv6addr: "fd00::13:3/124", mac: eeee.eeee.1303 }
+  - { interface: Ethernet1/2, ipv4addr: 10.255.23.3/24, ipv6addr: "fd00::23:3/124", mac: eeee.eeee.2303 }
+  - { interface: Ethernet1/3, ipv4addr: 10.255.34.3/24, ipv6addr: "fd00::34:3/124", mac: eeee.eeee.3403 }
 

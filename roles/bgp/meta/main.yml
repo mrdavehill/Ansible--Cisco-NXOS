@@ -1,0 +1,8 @@
+galaxy_info:
+  author: Dave Hill
+  description: BGP configuration - spine01 + spine02 are ASN 65000, leaf03 is ASN 65001 and leaf04 is ASN 65002
+  company: 
+
+  min_ansible_version: 2.9
+
+dependencies: []

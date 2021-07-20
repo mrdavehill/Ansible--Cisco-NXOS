@@ -19,7 +19,9 @@
       config:
         - name: "{{ item.interface }}"
           ipv4:
-          - address: "{{ item.addr }}"
+          - address: "{{ item.ipv4addr }}"
+          ipv6:
+          - address: "{{ item.ipv6addr }}"
       state: merged
     with_items: "{{ loopback_interfaces }}"
 

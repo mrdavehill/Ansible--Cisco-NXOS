@@ -1,7 +1,8 @@
 {% for obj in ethernet_interfaces %}
 interface {{ obj.interface }}
     no switchport
-    ip address {{ obj.addr }}
+    ip address {{ obj.ipv4addr }}
+    ipv6 address {{ obj.ipv6addr }}
     mac-address {{ obj.mac }}
     no shutdown
 {% endfor %}
