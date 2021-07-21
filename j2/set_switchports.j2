@@ -4,5 +4,6 @@ interface {{ obj.interface }}
     ip address {{ obj.ipv4addr }}
     ipv6 address {{ obj.ipv6addr }}
     mac-address {{ obj.mac }}
+    lldp tlv-set management-address {{ obj.ipv4addr | ipaddr('address') }} 
     no shutdown
 {% endfor %}

@@ -8,11 +8,40 @@
     nxos_system:
       hostname: "{{ inventory_hostname }}"
 
-  - name: enable lldp
+  - name: configure the exec banner
+    cisco.nxos.nxos_banner:
+      banner: exec
+      text: |
+         Hello World!
+
+         Four switch bow tie lab
+
+         +---------+e3          e3+---------+
+         | spine01 |--------------| spine02 |
+         +---------+              +---------+
+           |e1    \ e2          e1 /    e2|
+           |        \            /        |
+           |          \        /          |
+           |            \    /            |
+           |              \/              |
+           |             /  \             |
+           |           /      \           |
+           |         /          \         |
+           |e1     / e2        e1 \     e2|
+         +---------+              +---------+
+         | leaf03  |--------------| leaf04  |
+         +---------+e3          e3+---------+
+      state: present  
+
+
+  - name: enable lldp and routing
     nxos_config:
       lines:
         - config t
         - feature lldp
+        - feature ospf
+        - feature ospfv3
+        - feature bgp
 
   - name: configure loopbacks
     nxos_l3_interfaces:
@@ -25,7 +54,44 @@
       state: merged
     with_items: "{{ loopback_interfaces }}"
 
+  - name: ospf process 100 for ipv4
+    nxos_ospfv2:
+      config:
+        processes:
+        - process_id: 100
+          router_id: "{{ item.ipv4addr | ipaddr('address') }}"
+    with_items: "{{ loopback_interfaces }}"
+
+  - name: ospf process 200 for ipv6
+    cisco.nxos.nxos_ospfv3:
+      config:
+        processes:
+        - process_id: 200
+          router_id: "{{ item.ipv4addr | ipaddr('address') }}"
+    with_items: "{{ loopback_interfaces }}"
+
   - name: configure switchports
     nxos_config:
       src: j2/set_switchports.j2
+
+  - name: add ipv4 and ipv6 ospf processes to loopback interfaces
+    cisco.nxos.nxos_ospf_interfaces:
+      config:
+        - name: "{{ item.interface }}"
+          address_family:
+          - afi: ipv4
+            processes:
+            - process_id: "100"
+              area:
+                area_id: 0.0.0.0
+          - afi: ipv6
+            processes:
+            - process_id: "200"
+              area:
+                area_id: 0.0.0.0
+    with_items: "{{ loopback_interfaces }}"
+
+  - name: add ipv4 and ipv6 ospf processes to ethernet interfaces
+    nxos_config:  
+      src: j2/ospf_interfaces.j2
 

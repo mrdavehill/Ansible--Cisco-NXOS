@@ -1,6 +1,7 @@
 ---
-- name: advanced configuration
+- name: add BGP and PIM
   hosts: all
   gather_facts: no
   
-  tasks:
+  roles:
+    - bgp

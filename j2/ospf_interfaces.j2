@@ -1,0 +1,6 @@
+{% for obj in ethernet_interfaces %}
+interface {{ obj.interface }}
+    ip ospf network point-to-point
+    ip router ospf 100 area 0.0.0.0
+    ipv6 router ospfv3 200 area 0.0.0.0
+{% endfor %}
